@@ -21,7 +21,7 @@ shut_down="%{A:systemctl poweroff:}shut down%{A}"
 pid='$(for pid in $(pidof lemonbar); do echo $pid $(ps -p $pid -o etimes=); done | sort -n -k2 | head -n 1 | cut -d " " -f 1)'
 close="%{A:kill "$pid":} %{A}"
 
-echo -e "%{c}$restart%{O50}$suspend%{O50}$shut_down%{r}%{F#888}%{T2}$close%{O10}" | lemonbar -p -B#cc333740 -F#c2c2c2 \
+echo -e "%{c}$restart%{O50}$suspend%{O50}$shut_down%{r}%{F#888}%{T2}$close%{O10}" | lemonbar -p -B#cc2a2a2a -F#c2c2c2 \
 				-f "$font1" -o 5 \
 				-f "$font2" -o -55 \
 				-g ${bar_width}x${bar_height}+$((screen_width / 2 - bar_width / 2))+$((screen_height / 2 - bar_height / 2)) -n shut_down_bar | bash
