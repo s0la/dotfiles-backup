@@ -5,8 +5,8 @@ fg='%{F#999}'
 
 case $1 in
 	MAIL*) 
-		username="sola931"
-		password="sola9090"
+		username=""
+		password=""
 		mail_icon="%{A:xfce4-terminal -e mutt:} %{A}"
 		mail_count=$(curl -u $username:$password --silent "https://mail.google.com/mail/feed/atom" | xmllint --format - | awk -F '[><]' '/fullcount/ {print $3}')
 		[[ $mail_count -gt 0 ]] && mail="$mail_icon $mail_count mail" && space="%{O30}"
